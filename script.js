@@ -25,3 +25,25 @@ function showPopup(bool) {
     document.getElementById('popup').style.visibility = 'hidden'
   }
 }
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const percent = bar.getAttribute('data-percent');
+        bar.style.width = percent;
+        observer.unobserve(bar); // animate only once
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.skill-level').forEach(bar => {
+    observer.observe(bar);
+  });
+});
+
+
