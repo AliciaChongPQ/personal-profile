@@ -32,17 +32,32 @@ function showPopup(bool) {
 document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      const el = entry.target;
       if (entry.isIntersecting) {
-        const bar = entry.target;
-        const percent = bar.getAttribute('data-percent');
-        bar.style.width = percent;
-        observer.unobserve(bar); // animate only once
+        
+        if (el.classList.contains('skill-level')) {
+          const percent = el.getAttribute('data-percent');
+          el.style.width = percent;
+        }
+        if (el.classList.contains('text-appear')) {
+          el.classList.add('visible');
+        }
+        // observer.unobserve(el); // animate only once
+      }else {
+        // Reset for re-animation
+        if (el.classList.contains('skill-level')) {
+          el.style.width = '0';
+        }
+
+        if (el.classList.contains('text-appear')) {
+          el.classList.remove('visible');
+        }
       }
     });
   }, { threshold: 0.5 });
 
-  document.querySelectorAll('.skill-level').forEach(bar => {
-    observer.observe(bar);
+  document.querySelectorAll('.skill-level, .text-appear').forEach(el => {
+    observer.observe(el);
   });
 });
 
