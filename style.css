@@ -3,7 +3,13 @@ body {
 }
 
 /* Navigation Bar */
-
+nav{
+  position:fixed;
+  top:0;
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+}
 #home {
   background-color: white; 
   /* margin-left:-1cm;
@@ -15,8 +21,7 @@ body {
   display:flex;
   flex-wrap:nowrap;
   justify-content: space-around;
-  border-bottom: 1px solid black;
-  
+  border-bottom: 1px solid black;  
  }
 
 .topmenu {
@@ -25,6 +30,7 @@ body {
   padding: 20px;
   font-size: 20px;
   text-decoration:none;
+  
 }
 
 .topmenu:hover {
@@ -39,6 +45,7 @@ body {
   float: right;
   display:flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .profile_name {
@@ -140,6 +147,13 @@ h2 {
   #about-me {
     flex-wrap: wrap;
     flex-direction: column;
+    margin-top: 10px
+  }
+  .topmenu{
+    padding:0;
+  }
+  nav{
+    position: static;
   }
   #photo-div{
     width:100%;
