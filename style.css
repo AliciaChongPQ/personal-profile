@@ -5,14 +5,16 @@ body {
 /* Navigation Bar */
 
 #home {
-  background-color:  #7600bc;
-  padding-bottom: 1cm;
+  background-color:  #7600bc; 
   margin-left:-1cm;
   margin-right:-1cm;
   margin-top:-1cm;
   padding-top: 2cm;
   padding-bottom: 2cm;
   height: 5mm;
+  display:flex;
+  flex-wrap:nowrap;
+  justify-content: space-around;
  }
 
 .topmenu {
@@ -40,7 +42,8 @@ body {
   float: left;
   padding-left: 2cm;
   /* Add the styles here */
-  background-color: rgb(232, 170, 237);
+
+  
 }
 
 .profile_name .contact_info {
@@ -108,7 +111,7 @@ h2 {
 }
 
 .profile_image {
-  width: 550px;
+  width: 300px;
   height: fit-content;
   vertical-align: middle;
   margin: 5px;
@@ -120,6 +123,7 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
+  justify-content: space-evenly;
 }
 
 .skill {
@@ -323,4 +327,20 @@ button:hover {
   border-radius: 6px;
   text-align: center;
   cursor: pointer;
+}
+
+a{
+  color:black;
+}
+
+.skill_banner{
+  border: 1px solid gray;
+  display: block;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 50px;
+  padding: 10px;
+  /* width: 2in; */
+  font-size: 25px;
+  /* box-shadow: 0 3px 10px gray; */
 }
