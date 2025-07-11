@@ -95,7 +95,9 @@ h2 {
 
 .about-me {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  height: auto;
 }
 
 #about-me h1 {
@@ -111,10 +113,19 @@ h2 {
 }
 
 .profile_image {
-  width: 20vw;
-  height: fit-content;
+  width: 20vw; 
+  height: auto; 
+  object-fit: contain;
   vertical-align: middle;
   margin: 5px;
+}
+
+#photo-div{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: auto;
+  width: 25%;
 }
 
 /* Skills */
