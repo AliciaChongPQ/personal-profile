@@ -215,19 +215,74 @@ h2 {
   padding-top: 15%;
 } 
 
-.skills p {
-  align-items: center;
-  font-size: 15px;
-  color: gray;
-  margin-block-start: 5px;
-  margin-block-end: 5px;
-} 
-
 .flex_center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.skill-flip {
+  width: 150px;
+  height: 150px;
+  perspective: 1000px;
+  margin: 10px;
+  padding-top: 15px;
+}
+
+.skill-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.skill-flip:hover .skill-inner {
+  transform: rotateY(180deg);
+}
+
+.skill-front,
+.skill-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+
+  border: 1px solid gray;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 0 3px 10px gray;
+}
+
+.skill-front img {
+  height: 50px;
+  align-items: center;
+  padding-top: 10%;
+}
+
+.skill-front h6 {
+  align-items: center;
+  font-size: 20px;
+  margin-block-start: 5px;
+  margin-block-end: 5px;
+  padding-top: 15%;
+} 
+
+.skill-back {
+  transform: rotateY(180deg);
+  background-color: #f0f0f0;
+}
+
+.skill-back a{
+  align-items: center;
+  margin:auto;
+}
+
 
 /* Projects */
 .projects{
